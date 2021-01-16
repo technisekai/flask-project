@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			{% for page in pages %}
+			<div class="col mt-3">
+				<div class="card artikel shadow-sm">
+					<div class="card-body">
+						<a href="{{ page.path }}.html" style="color: #E94560;"><h5 class="card-title">{{ page.title }}</h5></a>
+						<p class="card-text small">Oleh: {{ page.author }}</p>
+						<p class="card-text">"{{ page.description }}"</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+{% endblock %}

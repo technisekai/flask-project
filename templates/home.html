@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+		<div class="row">
+			<div class="col-sm mt-5 pt-5 text-center">
+				<h1>TechnIsekai-TI</h1><br>
+				<p>
+					"Sebuah blog yang dibuat dengan rasa gabut berlebihan dan waktu luang yang membosankan."
+				</p>
+			</div>
+		</div>
+		<div class="col-sm text-center mt-5"><b>Sosial Media:</b></div>
+		<div class="row">
+			<div class="col-sm d-flex justify-content-center">
+				<a href="https://github.com/technisekai"><img src="{{ url_for('static', filename='assets/icon/github.png') }}" class="rounded mr-2" style="width: 30px; height: 30px;"></a>
+				<a href="https://web.facebook.com/widi.afandi.1"><img src="{{ url_for('static', filename='assets/icon/facebook.png') }}" class="rounded mr-2" style="width: 30px; height: 30px;"></a>
+				<a href="mailto:widiafandi58@gmail.com"><img src="{{ url_for('static', filename='assets/icon/gmail.png') }}" class="rounded mr-2" style="width: 30px; height: 30px;"></a>
+			</div>
+		</div>
+		<div class="navbar fixed-bottom">
+			<div class="col-sm text-center p-3 small">
+				Powered by <b class="text-pink">Flask & Bootstrap</b><br>
+				Made with  ❤  <b class="text-pink">by technisekai</b>
+			</div>
+		</div>
+{%  endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap CSS -->
+		<link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<!-- Bootstrap JS-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+		<!-- Custom CSS -->
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+			
+			.icon-text {
+			  font-family: Satisfy;
+			  color: #e94560;
+			  font-size: 20px;
+			}
+
+			body {
+			  background-color: #1a1a2e;
+			  color: #ffffff;
+			  font-family: 'PT Sans', sans-serif;
+			  font-size: 18px;
+			}
+
+			.artikel {
+			  background-color: #16213e;
+			}
+			
+			.text-pink {
+			  color: #e94560;
+			}
+
+			nav {
+			  background-color: #1a1a2e;
+			}
+		</style>
+		  
+		<title>{% if judul %} {{ judul }} - {% endif %}technisekai blog</title>
+	</head>
+	<body>
+		<div class="container p-4">
+			<!-- navbar -->
+			<nav class="navbar navbar-expand-lg navbar-dark mb-5 fixed-top">
+				  <div class="container">
+						<a class="navbar-brand" href="{{ url_for('home') }}"><b class="icon-text">TechnIsekai-TI</b></a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						  <span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+							  <ul class="navbar-nav">
+									<li class="nav-item mr-5">
+									  <a class="nav-link {% if judul == 'Home' %} active {% endif %}" href="{{ url_for('home') }}">Home</a>
+									</li>
+									<li class="nav-item mr-5">
+									  <a class="nav-link {% if judul == 'Artikel' %} active {% endif %}" href="{{ url_for('artikel') }}">Artikel</a>
+									</li>
+									<li class="nav-item">
+									  <a class="nav-link {% if judul == 'Tentang' %} active {% endif %}" href="{{ url_for('tentang') }}">Tentang</a>
+									</li>
+							  </ul>
+						</div>
+				  </div>
+			</nav>
+			<!-- content -->
+			<div class="container mt-5 pt-5">
+				{% block content %} {% endblock %}
+			</div>
+		</div>
+	</body>
+</html>
