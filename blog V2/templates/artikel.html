@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container mt-5 p-5">
+		<h2 class="fw-bold text-center">Daftar Artikel</h2>
+		<div class="row row-cols-1 row-cols-sm-3 g-1 mt-3">
+			{% for page in pages %}
+			<div class="col-sm mt-3">
+				<div class="card border-white shadow mb-3 mx-auto" style="max-width: 20rem;">
+				  <div class="card-body">
+					<a href="{{ page.path }}.html" class="text-decoration-none" style="color: #ffa45b;"><h5 class="card-title fw-bold">{{ page.title }}</h5></a>
+					<p class="card-text">
+						<div class="text-secondary small fw-bold pb-4">
+							<img src="{{ url_for('static', filename='assets/icon/author.png') }}" style="height: 18px;">&nbsp;{{ page.author }} |&nbsp;
+							<img src="{{ url_for('static', filename='assets/icon/date.png') }}" style="height: 18px;">&nbsp;{{ page.date }}
+						</div>
+						{{ page.description }}
+					</p>
+				  </div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

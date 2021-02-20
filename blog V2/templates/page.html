@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 p-4">
+	<div class="row justify-content-center">
+		<div class="col-sm-10 shadow artikel rounded-3 p-4">
+			<div class="text-center align-items-center">
+				<h2 class="fw-bold" style="color: #ffa45b;">{{ page.title }}</h2>
+				<div class="text-secondary small fw-bold pb-4">
+					<img src="{{ url_for('static', filename='assets/icon/author.png') }}" style="height: 18px;"> {{ page.author }} | 
+					<img src="{{ url_for('static', filename='assets/icon/date.png') }}" style="height: 18px;"> {{ page.date }}
+				</div>
+			</div>
+			<p>
+				<img src="{{ url_for('static', filename='assets/img/thumbnail/'+page.cover) }}" class="img-fluid rounded-3">
+				{{ page.html|safe }}
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

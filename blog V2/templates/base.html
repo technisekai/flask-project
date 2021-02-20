@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<!-- Bootstrap JS-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+		<!-- prism CSS -->
+		<link href="{{ url_for('static', filename='prism/css/prism.css') }}" rel="stylesheet" />
+		<!-- Custom CSS -->
+		<style>			
+			@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+			body {
+				background-color: #fbf6f0;
+				color: #214151;
+				font-family: 'PT Sans';
+				font-size: 18px;
+			}
+			.banner {
+				background-color: #ffda77;
+				color: #214151;
+			}
+			.kartu {
+				background-color: #ffffff;
+			}
+		</style>
+		  
+		<title>{% if judul %} {{ judul }} | {% endif %}Technisekai</title>
+	</head>
+	<body>
+		<script src="{{ url_for('static', filename='prism/js/prism.js') }}"></script>
+		<div class="container-fl">
+			<!-- navbar -->
+			<nav class="navbar navbar-expand-lg navbar-light {% if judul != 'Home' %} shadow-sm {% endif %} banner mb-5 fixed-top">
+				  <div class="container banner">
+						<a class="navbar-brand" href="{{ url_for('home') }}" style="font-family: 'Carter One'; color: #214151;"><b>TECHNISEKAI</b></a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						  <span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+							  <ul class="navbar-nav inline">
+									<li class="nav-item me-4">
+									  <a class="nav-link {% if judul == 'Home' %} active fw-bold{% endif %}" href="{{ url_for('home') }}">Home</a>
+									</li>
+									<li class="nav-item me-4">
+									  <a class="nav-link {% if judul == 'Artikel' %} active fw-bold{% endif %}" href="{{ url_for('artikel') }}">Artikel</a>
+									</li>
+									<li class="nav-item me-4">
+									  <a class="nav-link {% if judul == 'Tentang' %} active fw-bold{% endif %}" href="{{ url_for('tentang') }}">Tentang</a>
+									</li>
+							  </ul>
+						</div>
+				  </div>
+			</nav>
+			<!-- content -->
+			{% block content %} {% endblock %}
+			
+			<!-- footer -->
+			<footer class="footer bottom">
+				<div class="container text-center p-4 small">
+					@2021 | <b>Technisekai</b><br>
+					Powered by <b>Flask & Bootstrap</b>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

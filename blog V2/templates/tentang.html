@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container mt-5 p-4">
+		<h2 class="fw-bold text-center pb-4 mt-5">Tentang Saya</h2>
+		<div class="card mx-auto shadow" style="max-width: 400px;">
+		  <div class="row g-0">
+			<div class="col-md-5">
+			  <img src="{{ url_for('static', filename='assets/img/profil.png') }}" class="img-fluid" style="width: 100%; height:100%;">
+			</div>
+			<div class="col-md-7">
+			  <div class="card-body">
+				<h5 class="card-title fw-bold" style="color: #ffa45b;">Widi Afandi</h5>
+				<p class="card-text fw-bold small">
+					<img src="{{ url_for('static', filename='assets/icon/lahir.png') }}" class="img-fluid" style="width: 9%;"> Pekalongan, 06 Jan<br>
+					<img src="{{ url_for('static', filename='assets/icon/alamat.png') }}" class="img-fluid" style="width: 9%;"> Pekalongan, Jawa Tengah
+				</p>
+				<p class="card-text text-center"><small class="text-muted fw-bold">Python and Linux Enthusiasts</small></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="small fw-bold text-center mt-4">
+			Sosial Media
+			<div class="text-center">
+				<a href="https://web.facebook.com/widi.afandi.1/"><img src="{{ url_for('static', filename='assets/icon/facebook.png') }}" class="img-fluid me-2" style="width: 30px;"></a>
+				<a href="https://github.com/technisekai"><img src="{{ url_for('static', filename='assets/icon/github.png') }}" class="img-fluid me-2" style="width: 30px;"></a>
+				<a href="mailto:widiafandi58@gmail.com"><img src="{{ url_for('static', filename='assets/icon/gmail.png') }}" class="img-fluid me-2" style="width: 30px;"></a>
+				<a href="https://www.instagram.com/fandi___57/"><img src="{{ url_for('static', filename='assets/icon/instagram.png') }}" class="img-fluid me-2" style="width: 30px;"></a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

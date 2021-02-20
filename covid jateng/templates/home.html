@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container-fl banner rounded mt-5 p-5">
+		<div class="row align-items-center">
+			<div class="col-sm-5">
+				<img src="{{ url_for('static', filename='assets/img/p.png') }}" class="img-fluid">
+			</div>
+			<div class="col-sm">
+				<h1 class="fw-bold">INFORMASI PENYEBARAN COVID-19</h1>
+				<p>DI JAWA TENGAH</p>
+				
+				<div class="row pt-5">
+					<div class="col-sm">
+						<b>Kasus Positif</b><br>
+						<button type="button" class="btn btn-danger btn-lg">{{ info_covid[0] }}</button>
+					</div>
+					<div class="col-sm">
+						<b class="text">Kasus Sembuh</b><br>
+						<button type="button" class="btn btn-success btn-lg">{{ info_covid[1] }}</button>
+					</div>
+					<div class="col-sm">
+						<b>Kasus Meninggal</b><br>
+						<button type="button" class="btn btn-secondary btn-lg">{{ info_covid[2] }}</button>
+					</div>
+				</div>						
+			</div>
+		</div>				
+	</div>
+	<div class="container mt-5">
+		<h3 class="fw-bold text-center">PATUHI PROTOKOL KESEHATAN</h3>
+		<div class="row pt-5 align-items-center">
+			<div class="col-sm-2">
+				<img src="{{ url_for('static', filename='assets/img/mask.jpg') }}" class="img-fluid rounded">
+			</div>
+			<div class="col-sm-4">
+				<b>Selalu Pakai Masker</b>
+				<p class="small">Walaupun Anda tidak berada di tempat tertutup yang dipenuhi orang banyak, upayakan untuk tidak melepaskan masker</p>
+			</div>
+		</div>
+		<div class="row mt-4 align-items-center justify-content-end">
+			<div class="col-sm-4">
+				<b>Jaga Kebersihan Diri</b>
+				<p class="small">Bawa selalu hand sanitizer yang mengandung setidaknya 60% alkohol ke mana pun Anda dan keluarga pergi. </p>
+			</div>
+			<div class="col-sm-2">
+				<img src="{{ url_for('static', filename='assets/img/wash-hand.jpeg') }}" class="img-fluid rounded">
+			</div>
+		</div>
+		<div class="row mt-4 align-items-center">
+			<div class="col-sm-2 kartu rounded">
+				<img src="{{ url_for('static', filename='assets/img/social-distancing.png') }}" class="img-fluid">
+			</div>
+			<div class="col-sm-4">
+				<b>Selalu Jaga Jarak</b>
+				<p class="small">Pastikan untuk selalu menjaga jarak atau physical distancing sejauh 1–2 meter dengan orang lain.</p>
+			</div>
+		</div>
+	</div>
+{%  endblock %}

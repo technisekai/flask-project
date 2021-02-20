@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container-fl banner rounded mt-5 p-5">
+		<div class="row align-items-center text-center">
+			<div class="col-sm-7">
+				<img src="{{ url_for('static', filename='assets/img/home.png') }}" class="img-fluid" style="width: 90%;">
+			</div>
+			<div class="col-sm text-center">
+				<h1 class="fw-bold">TECHNISEKAI</h1>
+				<p>Blog pribadi dari Widi Afandi.</p>						
+			</div>
+			<div class="col-sm-2"></div>
+		</div>				
+	</div>
+	<div class="container mt-5">
+		<h2 class="fw-bold ps-4">Artikel Terbaru</h2>
+		<span class="small ps-4">Top 3 artikel terbaru dari blog ini.</span>
+		<div class="row row-cols-1 row-cols-md-3 g-4 p-4">
+			{% for page in pages %}
+			<div class="col-sm mt-3 mb-3">
+				<div class="card artikel shadow rounded-3">
+					<img src="{{ url_for('static', filename='assets/img/thumbnail/'+page.cover) }}" class="card-img-top p-1 rounded">
+					<div class="card-body">
+						<a href="{{ url_for('page', path=page.path) }}" class="text-decoration-none" style="color: #ffa45b;"><h4 class="card-title fw-bold">{{ page.title }}</h4></a>
+						<div class="text-secondary small fw-bold pb-4 d-flex align-items-center">
+							<img src="{{ url_for('static', filename='assets/icon/author.png') }}" style="height: 18px;">&nbsp;{{ page.author }} |&nbsp;
+							<img src="{{ url_for('static', filename='assets/icon/date.png') }}" style="height: 18px;">&nbsp;{{ page.date }}
+						</div>
+						<p class="card-text">"{{ page.description }}"</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{%  endblock %}

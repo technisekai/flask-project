@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container mt-5 p-5">
+		<div class="row">
+			<div class="col-sm"></div>
+			<div class="col-sm">
+				<form action = "http://127.0.0.1:5000/data" method = "post">
+				  <div class="mb-3">
+					<label class="form-label">Lokasi</label>
+					<input type="text" class="form-control" name="lokasi">
+				  </div>
+				  <div class="mb-3">
+					<label class="form-label">Kasus Positif</label>
+					<input type="text" class="form-control" name="positif">
+				  </div>
+				  <div class="mb-3">
+					<label class="form-label">Kasus Sembuh</label>
+					<input type="text" class="form-control" name="sembuh">
+				  </div>				  
+				  <div class="mb-3">
+					<label class="form-label">Kasus Meninggal</label>
+					<input type="text" class="form-control" name="meninggal">
+				  </div>
+				  <button type="submit" class="btn btn-primary">Kirim</button>
+				</form>
+			</div>
+			<div class="col-sm"></div>
+		</div>
+	</div>
+{%  endblock %}

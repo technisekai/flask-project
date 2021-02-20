@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container mt-5 p-5">
+		<h1 class="text-center fw-bold">Detail Per Kabupaten</h1>
+		<table class="table mt-4">
+		  <thead>
+			<tr class="table banner">
+			  <th scope="col">Lokasi</th>
+			  <th scope="col">Positif</th>
+			  <th scope="col">Sembuh</th>
+			  <th scope="col">Meninggal</th>
+			  <th scope="col">Kasus Aktif</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% for i in info_covid %}
+				<tr>
+					<th scope="row">{{ i }}</th>
+				{% for j in info_covid[i] %}
+					<td>{{ info_covid[i][j] }}</td>
+				{% endfor %}
+				</tr>
+			{% endfor %}
+		  </tbody>
+		</table>
+		<p class="text-center">Ingin berkontribusi? klik <a role="button" href="{{ url_for('tambah') }}" class="btn btn-info btn-sm">Kontribusi</a></p>
+	</div>
+{%  endblock %}
+

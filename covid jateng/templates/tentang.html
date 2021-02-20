@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container mt-5 p-5">
+		<h1 class="fw-bold text-center text-break p-3 mb-3">Tentang Project Ini</h1>
+		<div class="row align-items-center mb-2">
+			<div class="col-sm-8 text-end">
+				<img src="{{ url_for('static', filename='assets/img/anggota.png') }}" class="img-fluid">
+			</div>
+			<div class="col-sm">
+				<h4 class="fw-bold">Anggota:</h4>
+				<b class="small">Ahmad Saiful Huda</b>
+				<p class="small">19102158</p>
+				<b class="small">Bayu Setyaji</b>
+				<p class="small">19102157</p>
+				<b class="small">Widi Afandi</b>
+				<p class="small">19102127</p>
+			</div>
+		</div>
+		<p class="text-break">
+			Project ini dibuat untuk memenuhi tugas besar mata kuliah pemrograman fungsional. 
+			Kami mengambil studi kasus 5 (PyMonad) dan 6 (WSGI) dengan menerapkan library flask. 
+			Untuk data real, kami menggunakan API dari situs "https://api.kawalcorona.com/indonesia/provinsi/" dimana kami hanya mengambil data provinsi jawa tengah saja.
+		</p>
+	</div>
+{% endblock %}
